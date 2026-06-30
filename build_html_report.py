@@ -550,20 +550,6 @@ html = f"""<!DOCTYPE html>
     </tbody>
   </table>
 
-  <div class="chart-grid-2">
-    <div class="chart-box">
-      <h3>Monthly Volume — Baseline vs. Forecast vs. Actual</h3>
-      <canvas id="comparisonChart" height="200"></canvas>
-    </div>
-    <div class="chart-box">
-      <h3>Score 3+ Rate — Baseline vs. Actual</h3>
-      <canvas id="scoreRateChart" height="200"></canvas>
-    </div>
-  </div>
-
-  <div class="caveat-box">
-    <strong>Early-read caveat:</strong> Post-launch actuals are based on 22 days of data (May 28 – June 18, 2026). Monthly figures are extrapolated from that window and carry meaningful uncertainty. The recommended minimum for a statistically confident comparison is 60–90 days. Key factors to monitor before drawing conclusions: <strong>(1)</strong> June is historically Airstream's peak month (~28,700 leads in the prior-year baseline), so raw volume comparisons are not apples-to-apples; <strong>(2)</strong> score-progression timing may lag the new system's routing logic; <strong>(3)</strong> any post-launch decisions on frequency moderation (D4) or score threshold (D3B) will shift the baseline.
-  </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════ FOOTER -->
@@ -748,66 +734,6 @@ new Chart(document.getElementById('scenarioChart'), {{
   }}]
 }});
 
-// ── Comparison Bar Chart ──
-new Chart(document.getElementById('comparisonChart'), {{
-  type: 'bar',
-  data: {{
-    labels: ['Avg / Month'],
-    datasets: [
-      {{ label: 'Baseline',     data: [{monthly_avg:.0f}],        backgroundColor: SILVER }},
-      {{ label: 'Forecast',     data: [{FORECAST_MONTHLY}],       backgroundColor: ACCENT }},
-      {{ label: 'Actual (proj.)', data: [{post_monthly:.0f}],     backgroundColor: NAVY   }},
-    ]
-  }},
-  options: {{
-    responsive: true,
-    plugins: {{
-      legend: {{ position: 'bottom', labels: {{ font: {{ size: 11 }}, padding: 12, boxWidth: 12 }} }},
-      tooltip: {{
-        callbacks: {{
-          label: ctx => ` ${{ctx.dataset.label}}: ${{ctx.raw.toLocaleString()}} leads/mo`
-        }}
-      }}
-    }},
-    scales: {{
-      x: {{ grid: {{ display: false }} }},
-      y: {{
-        ticks: {{ font: {{ size: 10 }} }},
-        grid: {{ color: '#eee' }},
-      }}
-    }}
-  }}
-}});
-
-// ── Score Rate Bar Chart ──
-new Chart(document.getElementById('scoreRateChart'), {{
-  type: 'bar',
-  data: {{
-    labels: ['Score 3+ Rate'],
-    datasets: [
-      {{ label: 'Baseline',     data: [{score3plus_rate*100:.1f}],   backgroundColor: SILVER }},
-      {{ label: 'Actual',       data: [{post_score3rate*100:.1f}],   backgroundColor: NAVY   }},
-    ]
-  }},
-  options: {{
-    responsive: true,
-    plugins: {{
-      legend: {{ position: 'bottom', labels: {{ font: {{ size: 11 }}, padding: 12, boxWidth: 12 }} }},
-      tooltip: {{
-        callbacks: {{
-          label: ctx => ` ${{ctx.dataset.label}}: ${{ctx.raw.toFixed(1)}}%`
-        }}
-      }}
-    }},
-    scales: {{
-      x: {{ grid: {{ display: false }} }},
-      y: {{
-        ticks: {{ font: {{ size: 10 }}, callback: v => v + '%' }},
-        grid: {{ color: '#eee' }},
-        max: 20,
-      }}
-    }}
-  }}
 }});
 </script>
 </body>
