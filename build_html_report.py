@@ -507,9 +507,9 @@ html = f"""<!DOCTYPE html>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ SECTION 3 — ACTUALS -->
+<!-- ════════════════════════════════════════════════════════ SECTION 2 — ACTUALS -->
 <section class="section">
-  <div class="section-label">Section 3</div>
+  <div class="section-label">Section 2</div>
   <div class="section-title">Post-Launch Actuals vs. Forecast</div>
   <div class="section-sub">May 28 – June 18, 2026 &nbsp;·&nbsp; 22 days &nbsp;·&nbsp; {post_total:,} leads captured</div>
 
@@ -519,38 +519,33 @@ html = f"""<!DOCTYPE html>
         <th style="width:28%">Metric</th>
         <th style="width:20%">Baseline (Before)</th>
         <th style="width:20%">Forecast (Expected)</th>
-        <th style="width:20%">Actual (Post-Launch)</th>
-        <th style="width:12%">vs. Forecast</th>
+        <th style="width:32%">Actual (Post-Launch)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="metric-name">Avg Leads / Month</td>
         <td>{monthly_avg:,.0f}</td>
-        <td>{FORECAST_MONTHLY:,} <span style="font-size:11px;color:#888">(≈−7%)</span></td>
-        <td class="actual-cell cell-{vc_monthly}">{post_monthly:,.0f} <span style="font-size:11px;color:#888">(implied)</span></td>
-        <td><span class="delta delta-{vc_monthly}">{pd_monthly}</span></td>
+        <td>−7%</td>
+        <td class="actual-cell cell-{vc_monthly}">{post_monthly:,.0f} <span style="font-size:11px;color:#888">(−35.2% vs. baseline)</span></td>
       </tr>
       <tr>
         <td class="metric-name">Per Dealer / Month</td>
         <td>{per_dealer_mo:.0f}</td>
-        <td>{FORECAST_PER_DEALER}</td>
-        <td class="actual-cell cell-{vc_dealer}">{post_per_dealer:.0f}</td>
-        <td><span class="delta delta-{vc_dealer}">{pd_dealer}</span></td>
+        <td>−7%</td>
+        <td class="actual-cell cell-{vc_dealer}">{post_per_dealer:.0f} <span style="font-size:11px;color:#888">(−35.3% vs. baseline)</span></td>
       </tr>
       <tr>
         <td class="metric-name">Score 3+ Rate</td>
         <td>{score3plus_rate:.1%}</td>
-        <td>Flat-to-up <span style="font-size:11px;color:#888">(quality thesis)</span></td>
-        <td class="actual-cell cell-{vc_score3}">{post_score3rate:.1%}</td>
-        <td><span class="delta delta-{vc_score3}">{pd_score3} pts</span></td>
+        <td>Flat-to-up</td>
+        <td class="actual-cell cell-{vc_score3}">{post_score3rate:.1%} <span style="font-size:11px;color:#888">(−30.7% vs. baseline)</span></td>
       </tr>
       <tr>
         <td class="metric-name">External Paid Share</td>
         <td>{paid_pct:.1%}</td>
-        <td>~60% <span style="font-size:11px;color:#888">(unchanged)</span></td>
-        <td class="actual-cell cell-{vc_paid}">{post_paid_pct:.1%}</td>
-        <td><span class="delta delta-{vc_paid}">{pd_paid} pts</span></td>
+        <td>~60%</td>
+        <td class="actual-cell cell-{vc_paid}">{post_paid_pct:.1%} <span style="font-size:11px;color:#888">(+35.8% vs. baseline)</span></td>
       </tr>
     </tbody>
   </table>
