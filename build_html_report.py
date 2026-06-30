@@ -102,7 +102,7 @@ post_paid_pct = post_src.get('External Paid (Meta)', 0) / post_total
 # ── Forecast reference values (from PDF Section 5) ────────────────────────────
 FORECAST_MONTHLY   = 17891   # Form elimination only — implemented path
 FORECAST_PER_DEALER = 216
-BASELINE_MONTHLY_PDF = 19200  # PDF baseline for scenario chart
+BASELINE_MONTHLY_PDF = 18593  # Actual 13-month baseline average
 
 # ── Variance helpers ───────────────────────────────────────────────────────────
 def variance_class(actual, forecast):
@@ -127,7 +127,7 @@ print(f"Post paid%: {post_paid_pct:.1%}")
 
 # ── Scenario data (from PDF Section 5 exactly) ────────────────────────────────
 scenarios = [
-    {"label": "Current baseline (form submit)",        "total": 19200, "implemented": False},
+    {"label": "Current baseline (form submit)",        "total": 18593, "implemented": False},
     {"label": "Form elimination only",                 "total": 17891, "implemented": True},
     {"label": "Score-change notifications (all, 0→1)", "total": 17254, "implemented": False},
     {"label": "Elim + 50% checkbox opt-in",            "total": 14715, "implemented": False},
