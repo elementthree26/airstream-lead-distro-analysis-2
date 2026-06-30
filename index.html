@@ -16,6 +16,7 @@
     line-height: 1.5;
   }
 
+  /* ── LAYOUT ── */
   .page {
     max-width: 960px;
     margin: 0 auto;
@@ -23,6 +24,7 @@
     box-shadow: 0 2px 24px rgba(0,0,0,0.10);
   }
 
+  /* ── HEADER ── */
   .site-header {
     background: #1B3A6B;
     padding: 28px 48px 24px;
@@ -64,6 +66,7 @@
   }
   .meta-pill strong { color: #A8C4E0; font-size: 10px; display: block; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
 
+  /* ── SECTIONS ── */
   .section {
     padding: 40px 48px;
     border-bottom: 1px solid #e8eaed;
@@ -90,6 +93,7 @@
     margin-bottom: 28px;
   }
 
+  /* ── KPI GRID ── */
   .kpi-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -121,6 +125,7 @@
     color: #999;
   }
 
+  /* ── CHARTS ── */
   .chart-grid-3 {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -152,6 +157,7 @@
     width: 100% !important;
   }
 
+  /* ── BRAND STAT STRIP ── */
   .brand-strip {
     background: #F4F5F6;
     border-radius: 8px;
@@ -164,6 +170,7 @@
   .brand-stat { font-size: 13px; color: #444; }
   .brand-stat strong { color: #1B3A6B; font-size: 15px; }
 
+  /* ── SCENARIO CHART ── */
   .scenario-wrap {
     background: #F4F5F6;
     border-radius: 8px;
@@ -177,6 +184,7 @@
     margin-bottom: 16px;
   }
 
+  /* ── DECISION TABLE ── */
   .decision-table {
     width: 100%;
     border-collapse: collapse;
@@ -211,6 +219,7 @@
   .badge-navy { background: #1B3A6B; color: #fff; }
   .badge-silver { background: #e0e0e0; color: #555; }
 
+  /* ── COMPARISON TABLE ── */
   .comparison-table {
     width: 100%;
     border-collapse: collapse;
@@ -256,6 +265,7 @@
   .delta-yellow { background: #fff3cd; color: #8a5a00; }
   .delta-red    { background: #fde8e8; color: #9B1C1C; }
 
+  /* ── CAVEAT BOX ── */
   .caveat-box {
     background: #FFF8E1;
     border-left: 4px solid #F9A825;
@@ -268,6 +278,7 @@
   }
   .caveat-box strong { color: #333; }
 
+  /* ── FOOTER ── */
   .site-footer {
     background: #1B3A6B;
     padding: 20px 48px;
@@ -282,6 +293,7 @@
 <body>
 <div class="page">
 
+<!-- ════════════════════════════════════════════════════════ HEADER -->
 <header class="site-header">
   <div class="wordmark">Airstream</div>
   <h1>Dealer Lead Distribution</h1>
@@ -294,6 +306,7 @@
   </div>
 </header>
 
+<!-- ════════════════════════════════════════════════════════ SECTION 1 — BASELINE -->
 <section class="section">
   <div class="section-label">Section 1</div>
   <div class="section-title">Baseline: The Pipeline Before Launch</div>
@@ -344,6 +357,7 @@
   </div>
 </section>
 
+<!-- ════════════════════════════════════════════════════════ SECTION 2 — FORECAST -->
 <section class="section">
   <div class="section-label">Section 2</div>
   <div class="section-title">Pre-Launch Forecast</div>
@@ -398,6 +412,7 @@
   </table>
 </section>
 
+<!-- ════════════════════════════════════════════════════════ SECTION 3 — ACTUALS -->
 <section class="section">
   <div class="section-label">Section 3</div>
   <div class="section-title">Post-Launch Actuals vs. Forecast</div>
@@ -419,28 +434,28 @@
         <td>18,593</td>
         <td>17,891 <span style="font-size:11px;color:#888">(≈−7%)</span></td>
         <td class="actual-cell cell-red">12,052 <span style="font-size:11px;color:#888">(implied)</span></td>
-        <td><span class="delta delta-red">−32.6%</span></td>
+        <td><span class="delta delta-red">-32.6%</span></td>
       </tr>
       <tr>
         <td class="metric-name">Per Dealer / Month</td>
         <td>224</td>
         <td>216</td>
         <td class="actual-cell cell-red">145</td>
-        <td><span class="delta delta-red">−32.8%</span></td>
+        <td><span class="delta delta-red">-32.8%</span></td>
       </tr>
       <tr>
         <td class="metric-name">Score 3+ Rate</td>
         <td>8.8%</td>
         <td>Flat-to-up <span style="font-size:11px;color:#888">(quality thesis)</span></td>
         <td class="actual-cell cell-red">6.1%</td>
-        <td><span class="delta delta-red">−2.7 pts</span></td>
+        <td><span class="delta delta-red">-31.0% pts</span></td>
       </tr>
       <tr>
         <td class="metric-name">External Paid Share</td>
         <td>59.8%</td>
         <td>~60% <span style="font-size:11px;color:#888">(unchanged)</span></td>
         <td class="actual-cell cell-red">81.2%</td>
-        <td><span class="delta delta-red">+21.4 pts</span></td>
+        <td><span class="delta delta-red">+35.8% pts</span></td>
       </tr>
     </tbody>
   </table>
@@ -457,21 +472,23 @@
   </div>
 
   <div class="caveat-box">
-    <strong>Early-read caveat:</strong> Post-launch actuals are based on 22 days of data (May 28 – June 18, 2026). Monthly figures are extrapolated from that window and carry meaningful uncertainty. The recommended minimum for a statistically confident comparison is 60–90 days. Key factors to monitor before drawing conclusions: <strong>(1)</strong> June is historically Airstream's peak month (~28,700 leads in the prior-year baseline), so raw volume comparisons are not apples-to-apples without seasonal adjustment; <strong>(2)</strong> score-progression timing may lag the new system's routing logic; <strong>(3)</strong> any post-launch decisions on frequency moderation (D4) or score threshold (D3B) will shift results further.
+    <strong>Early-read caveat:</strong> Post-launch actuals are based on 22 days of data (May 28 – June 18, 2026). Monthly figures are extrapolated from that window and carry meaningful uncertainty. The recommended minimum for a statistically confident comparison is 60–90 days. Key factors to monitor before drawing conclusions: <strong>(1)</strong> June is historically Airstream's peak month (~28,700 leads in the prior-year baseline), so raw volume comparisons are not apples-to-apples; <strong>(2)</strong> score-progression timing may lag the new system's routing logic; <strong>(3)</strong> any post-launch decisions on frequency moderation (D4) or score threshold (D3B) will shift the baseline.
   </div>
 </section>
 
+<!-- ════════════════════════════════════════════════════════ FOOTER -->
 <footer class="site-footer">
   <div class="footer-left">Element Three &nbsp;·&nbsp; Prepared June 2026</div>
   <div class="footer-right">Airstream Dealer Lead Distribution — Confidential</div>
 </footer>
 
-</div>
+</div><!-- .page -->
 
 <script>
 const NAVY   = '#1B3A6B';
 const SILVER = '#A8A9AD';
 const ACCENT = '#4A7CC7';
+const LIGHT  = '#D6E4F7';
 const GREEN  = '#2E7D32';
 const RED    = '#C62828';
 
@@ -479,13 +496,14 @@ Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Hel
 Chart.defaults.font.size   = 12;
 Chart.defaults.color       = '#555';
 
+// ── Monthly Volume ──
 new Chart(document.getElementById('monthlyChart'), {
   type: 'bar',
   data: {
-    labels: ["Apr '25","May '25","Jun '25","Jul '25","Aug '25","Sep '25","Oct '25","Nov '25","Dec '25","Jan '26","Feb '26","Mar '26","Apr '26"],
+    labels: ["Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26"],
     datasets: [{
       label: 'Leads',
-      data: [16178,20272,28693,23557,19161,16305,13902,12106,17258,24483,20397,15870,13523],
+      data: [16178, 20272, 28693, 23557, 19161, 16305, 13902, 12106, 17258, 24483, 20397, 15870, 13523],
       backgroundColor: NAVY,
       borderRadius: 3,
       borderSkipped: false,
@@ -493,14 +511,21 @@ new Chart(document.getElementById('monthlyChart'), {
   },
   options: {
     responsive: true,
-    plugins: { legend: { display: false } },
+    plugins: {
+      legend: { display: false },
+      annotation: { }
+    },
     scales: {
       x: { ticks: { font: { size: 9 }, maxRotation: 45 }, grid: { display: false } },
-      y: { ticks: { font: { size: 10 } }, grid: { color: '#eee' } }
+      y: {
+        ticks: { font: { size: 10 } },
+        grid: { color: '#eee' },
+      }
     }
   }
 });
 
+// ── Source Split ──
 new Chart(document.getElementById('sourceChart'), {
   type: 'doughnut',
   data: {
@@ -516,7 +541,10 @@ new Chart(document.getElementById('sourceChart'), {
     responsive: true,
     cutout: '62%',
     plugins: {
-      legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 12, boxWidth: 12 } },
+      legend: {
+        position: 'bottom',
+        labels: { font: { size: 11 }, padding: 12, boxWidth: 12 }
+      },
       tooltip: {
         callbacks: {
           label: function(ctx) {
@@ -530,14 +558,15 @@ new Chart(document.getElementById('sourceChart'), {
   }
 });
 
+// ── Score Distribution ──
 new Chart(document.getElementById('scoreChart'), {
   type: 'bar',
   data: {
-    labels: ["Score 1","Score 2","Score 3","Score 4","Score 5"],
+    labels: ["Score 1", "Score 2", "Score 3", "Score 4", "Score 5"],
     datasets: [{
       label: 'Leads',
-      data: [175549,43849,15581,4807,846],
-      backgroundColor: ["#A8A9AD","#A8A9AD","#4A7CC7","#1B3A6B","#0D1F3C"],
+      data: [175549, 43849, 15581, 4807, 846],
+      backgroundColor: ["#A8A9AD", "#A8A9AD", "#4A7CC7", "#1B3A6B", "#0D1F3C"],
       borderRadius: 3,
     }]
   },
@@ -549,7 +578,7 @@ new Chart(document.getElementById('scoreChart'), {
       tooltip: {
         callbacks: {
           label: function(ctx) {
-            const total = [175549,43849,15581,4807,846].reduce((a,b)=>a+b,0);
+            const total = [175549, 43849, 15581, 4807, 846].reduce((a,b)=>a+b,0);
             const pct = (ctx.raw/total*100).toFixed(1);
             return ` ${ctx.raw.toLocaleString()} (${pct}%)`;
           }
@@ -563,25 +592,23 @@ new Chart(document.getElementById('scoreChart'), {
   }
 });
 
-const scenarioData = [
-  {"label": "Current baseline (form submit)",        "total": 19200, "implemented": false},
-  {"label": "Form elimination only",                 "total": 17891, "implemented": true},
-  {"label": "Score-change notifications (all, 0→1)", "total": 17254, "implemented": false},
-  {"label": "Elim + 50% checkbox opt-in",            "total": 14715, "implemented": false},
-  {"label": "Elim + 30% checkbox opt-in",            "total": 13444, "implemented": false},
-  {"label": "Elim + 2.4% checkbox (config proxy)",   "total": 11691, "implemented": false},
-  {"label": "Elim + 30% CB + Score 2+ threshold",    "total": 5208,  "implemented": false},
-  {"label": "Elim + 30% CB + Score 3+ threshold",    "total": 1263,  "implemented": false},
-];
+// ── Scenario Chart ──
+const scenarioData = [{"label": "Current baseline (form submit)", "total": 19200, "implemented": false}, {"label": "Form elimination only", "total": 17891, "implemented": true}, {"label": "Score-change notifications (all, 0\u21921)", "total": 17254, "implemented": false}, {"label": "Elim + 50% checkbox opt-in", "total": 14715, "implemented": false}, {"label": "Elim + 30% checkbox opt-in", "total": 13444, "implemented": false}, {"label": "Elim + 2.4% checkbox (config proxy)", "total": 11691, "implemented": false}, {"label": "Elim + 30% CB + Score 2+ threshold", "total": 5208, "implemented": false}, {"label": "Elim + 30% CB + Score 3+ threshold", "total": 1263, "implemented": false}];
+const scenLabels = scenarioData.map(s => s.label);
+const scenVals   = scenarioData.map(s => s.total);
+const scenColors = scenarioData.map(s => s.implemented ? NAVY : '#CBD5E0');
+const scenBorders = scenarioData.map(s => s.implemented ? NAVY : '#CBD5E0');
 
 new Chart(document.getElementById('scenarioChart'), {
   type: 'bar',
   data: {
-    labels: scenarioData.map(s => s.label),
+    labels: scenLabels,
     datasets: [{
       label: 'Monthly Leads',
-      data: scenarioData.map(s => s.total),
-      backgroundColor: scenarioData.map(s => s.implemented ? NAVY : '#CBD5E0'),
+      data: scenVals,
+      backgroundColor: scenColors,
+      borderColor: scenBorders,
+      borderWidth: 1,
       borderRadius: 3,
     }]
   },
@@ -601,7 +628,12 @@ new Chart(document.getElementById('scenarioChart'), {
       }
     },
     scales: {
-      x: { ticks: { font: { size: 10 } }, grid: { color: '#eee' }, min: 0, max: 22000 },
+      x: {
+        ticks: { font: { size: 10 } },
+        grid: { color: '#eee' },
+        min: 0,
+        max: 22000,
+      },
       y: { ticks: { font: { size: 11 } }, grid: { display: false } }
     }
   },
@@ -626,47 +658,64 @@ new Chart(document.getElementById('scenarioChart'), {
   }]
 });
 
+// ── Comparison Bar Chart ──
 new Chart(document.getElementById('comparisonChart'), {
   type: 'bar',
   data: {
     labels: ['Avg / Month'],
     datasets: [
-      { label: 'Baseline',       data: [18593], backgroundColor: SILVER },
-      { label: 'Forecast',       data: [17891], backgroundColor: ACCENT },
-      { label: 'Actual (proj.)', data: [12052], backgroundColor: NAVY   },
+      { label: 'Baseline',     data: [18593],        backgroundColor: SILVER },
+      { label: 'Forecast',     data: [17891],       backgroundColor: ACCENT },
+      { label: 'Actual (proj.)', data: [12052],     backgroundColor: NAVY   },
     ]
   },
   options: {
     responsive: true,
     plugins: {
       legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 12, boxWidth: 12 } },
-      tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw.toLocaleString()} leads/mo` } }
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${ctx.raw.toLocaleString()} leads/mo`
+        }
+      }
     },
     scales: {
       x: { grid: { display: false } },
-      y: { ticks: { font: { size: 10 } }, grid: { color: '#eee' } }
+      y: {
+        ticks: { font: { size: 10 } },
+        grid: { color: '#eee' },
+      }
     }
   }
 });
 
+// ── Score Rate Bar Chart ──
 new Chart(document.getElementById('scoreRateChart'), {
   type: 'bar',
   data: {
     labels: ['Score 3+ Rate'],
     datasets: [
-      { label: 'Baseline', data: [8.8], backgroundColor: SILVER },
-      { label: 'Actual',   data: [6.1], backgroundColor: NAVY   },
+      { label: 'Baseline',     data: [8.8],   backgroundColor: SILVER },
+      { label: 'Actual',       data: [6.1],   backgroundColor: NAVY   },
     ]
   },
   options: {
     responsive: true,
     plugins: {
       legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 12, boxWidth: 12 } },
-      tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw.toFixed(1)}%` } }
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${ctx.raw.toFixed(1)}%`
+        }
+      }
     },
     scales: {
       x: { grid: { display: false } },
-      y: { ticks: { font: { size: 10 }, callback: v => v + '%' }, grid: { color: '#eee' }, max: 20 }
+      y: {
+        ticks: { font: { size: 10 }, callback: v => v + '%' },
+        grid: { color: '#eee' },
+        max: 20,
+      }
     }
   }
 });
