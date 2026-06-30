@@ -740,6 +740,8 @@ new Chart(document.getElementById('scenarioChart'), {{
 </html>"""
 
 OUTPUT = '/home/user/airstream-lead-distro-analysis-2/airstream_lead_report.html'
+chartjs = open('/home/user/airstream-lead-distro-analysis-2/chartjs.min.js').read()
+html = html.replace('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>', '<script>' + chartjs + '</script>')
 with open(OUTPUT, 'w') as f:
     f.write(html)
 
