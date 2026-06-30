@@ -610,20 +610,6 @@ html = f"""<!DOCTYPE html>
     </tbody>
   </table>
 
-  <div class="chart-grid-2">
-    <div class="chart-box">
-      <h3>Monthly Volume — Baseline vs. Forecast vs. Actual</h3>
-      <canvas id="comparisonChart" height="200"></canvas>
-    </div>
-    <div class="chart-box">
-      <h3>Score 3+ Rate — Baseline vs. Actual</h3>
-      <canvas id="scoreRateChart" height="200"></canvas>
-    </div>
-  </div>
-
-  <div class="caveat-box">
-    <strong>Early-read caveat:</strong> Post-launch actuals are based on 22 days of data (May 28 – June 18, 2026). Monthly figures are extrapolated from that window and carry meaningful uncertainty. The recommended minimum for a statistically confident comparison is 60–90 days. Key factors to monitor before drawing conclusions: <strong>(1)</strong> June is historically Airstream's peak month (~28,700 leads in the prior-year baseline), so raw volume comparisons are not apples-to-apples; <strong>(2)</strong> score-progression timing may lag the new system's routing logic; <strong>(3)</strong> any post-launch decisions on frequency moderation (D4) or score threshold (D3B) will shift the baseline.
-  </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════ FOOTER -->
