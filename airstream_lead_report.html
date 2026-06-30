@@ -357,9 +357,64 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ SECTION 2 — ACTUALS -->
+<!-- ════════════════════════════════════════════════════════ SECTION 2 — FORECAST -->
 <section class="section">
   <div class="section-label">Section 2</div>
+  <div class="section-title">Pre-Launch Forecast</div>
+  <div class="section-sub">Eight scenarios modeled based on three independent levers — volume varies by which decisions were implemented</div>
+
+  <div class="scenario-wrap">
+    <h3>Monthly Dealer Lead Volume by Scenario (vs. 18,593 baseline)</h3>
+    <canvas id="scenarioChart" height="220"></canvas>
+  </div>
+
+  <table class="decision-table">
+    <thead>
+      <tr>
+        <th style="width:22%">Decision</th>
+        <th style="width:30%">Choice Made</th>
+        <th style="width:30%">Implication</th>
+        <th style="width:18%">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>D1 — Distribution trigger</strong></td>
+        <td>Hybrid: hand-raisers send immediately; others score-gated</td>
+        <td>Brochure + quote requests route on submission; rest on score change</td>
+        <td><span class="badge badge-navy">Implemented</span></td>
+      </tr>
+      <tr>
+        <td><strong>D2 — Brochure checkbox</strong></td>
+        <td>No checkbox (implicit consent)</td>
+        <td>Brochure request = hand-raiser → routes immediately</td>
+        <td><span class="badge badge-navy">Implemented</span></td>
+      </tr>
+      <tr>
+        <td><strong>D3A — New lead 0→1 counts?</strong></td>
+        <td>Yes — new lead entry triggers a notification</td>
+        <td>Score-change model is ~volume-neutral, not a 57% cut</td>
+        <td><span class="badge badge-navy">Implemented</span></td>
+      </tr>
+      <tr>
+        <td><strong>D3B — Score threshold</strong></td>
+        <td>All changes at launch; tune later</td>
+        <td>Start near current volume; raise threshold post-launch only if dealers are overloaded</td>
+        <td><span class="badge badge-navy">Implemented</span></td>
+      </tr>
+      <tr>
+        <td><strong>D4 — Frequency moderation</strong></td>
+        <td>Open — Airstream to decide</td>
+        <td>Watch for duplicate-lead / Five Rivet effects; may add a 1-per-email-per-7-day cap</td>
+        <td><span class="badge badge-silver">TBD</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ SECTION 3 — ACTUALS -->
+<section class="section">
+  <div class="section-label">Section 3</div>
   <div class="section-title">Post-Launch Actuals vs. Forecast</div>
   <div class="section-sub">May 28 – June 18, 2026 &nbsp;·&nbsp; 22 days &nbsp;·&nbsp; 8,838 leads captured</div>
 
@@ -369,51 +424,42 @@
         <th style="width:28%">Metric</th>
         <th style="width:20%">Baseline (Before)</th>
         <th style="width:20%">Forecast (Expected)</th>
-        <th style="width:32%">Actual (Post-Launch)</th>
+        <th style="width:20%">Actual (Post-Launch)</th>
+        <th style="width:12%">vs. Forecast</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="metric-name">Avg Leads / Month</td>
         <td>18,593</td>
-        <td>−7%</td>
-        <td class="actual-cell cell-red">12,052 <span style="font-size:11px;color:#888">(−35.2% vs. baseline)</span></td>
+        <td>17,891 <span style="font-size:11px;color:#888">(≈−7%)</span></td>
+        <td class="actual-cell cell-red">12,052 <span style="font-size:11px;color:#888">(implied)</span></td>
+        <td><span class="delta delta-red">-32.6%</span></td>
       </tr>
       <tr>
         <td class="metric-name">Per Dealer / Month</td>
         <td>224</td>
-        <td>−7%</td>
-        <td class="actual-cell cell-red">145 <span style="font-size:11px;color:#888">(−35.3% vs. baseline)</span></td>
+        <td>216</td>
+        <td class="actual-cell cell-red">145</td>
+        <td><span class="delta delta-red">-32.8%</span></td>
       </tr>
       <tr>
         <td class="metric-name">Score 3+ Rate</td>
         <td>8.8%</td>
-        <td>Flat-to-up</td>
-        <td class="actual-cell cell-red">6.1% <span style="font-size:11px;color:#888">(−30.7% vs. baseline)</span></td>
+        <td>Flat-to-up <span style="font-size:11px;color:#888">(quality thesis)</span></td>
+        <td class="actual-cell cell-red">6.1%</td>
+        <td><span class="delta delta-red">-31.0% pts</span></td>
       </tr>
       <tr>
         <td class="metric-name">External Paid Share</td>
         <td>59.8%</td>
-        <td>~60%</td>
-        <td class="actual-cell cell-red">81.2% <span style="font-size:11px;color:#888">(+35.8% vs. baseline)</span></td>
+        <td>~60% <span style="font-size:11px;color:#888">(unchanged)</span></td>
+        <td class="actual-cell cell-red">81.2%</td>
+        <td><span class="delta delta-red">+35.8% pts</span></td>
       </tr>
     </tbody>
   </table>
 
-  <div class="chart-grid-2">
-    <div class="chart-box">
-      <h3>Monthly Volume — Baseline vs. Forecast vs. Actual</h3>
-      <canvas id="comparisonChart" height="200"></canvas>
-    </div>
-    <div class="chart-box">
-      <h3>Score 3+ Rate — Baseline vs. Actual</h3>
-      <canvas id="scoreRateChart" height="200"></canvas>
-    </div>
-  </div>
-
-  <div class="caveat-box">
-    <strong>Early-read caveat:</strong> Post-launch actuals are based on 22 days of data (May 28 – June 18, 2026). Monthly figures are extrapolated from that window and carry meaningful uncertainty. The recommended minimum for a statistically confident comparison is 60–90 days. Key factors to monitor before drawing conclusions: <strong>(1)</strong> June is historically Airstream's peak month (~28,700 leads in the prior-year baseline), so raw volume comparisons are not apples-to-apples; <strong>(2)</strong> score-progression timing may lag the new system's routing logic; <strong>(3)</strong> any post-launch decisions on frequency moderation (D4) or score threshold (D3B) will shift the baseline.
-  </div>
 </section>
 
 <!-- ════════════════════════════════════════════════════════ FOOTER -->
