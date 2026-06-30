@@ -364,7 +364,7 @@
   <div class="section-sub">Eight scenarios modeled based on three independent levers — volume varies by which decisions were implemented</div>
 
   <div class="scenario-wrap">
-    <h3>Monthly Dealer Lead Volume by Scenario (vs. 19,200 baseline)</h3>
+    <h3>Monthly Dealer Lead Volume by Scenario (vs. 18,593 baseline)</h3>
     <canvas id="scenarioChart" height="220"></canvas>
   </div>
 
@@ -593,7 +593,7 @@ new Chart(document.getElementById('scoreChart'), {
 });
 
 // ── Scenario Chart ──
-const scenarioData = [{"label": "Current baseline (form submit)", "total": 19200, "implemented": false}, {"label": "Form elimination only", "total": 17891, "implemented": true}, {"label": "Score-change notifications (all, 0\u21921)", "total": 17254, "implemented": false}, {"label": "Elim + 50% checkbox opt-in", "total": 14715, "implemented": false}, {"label": "Elim + 30% checkbox opt-in", "total": 13444, "implemented": false}, {"label": "Elim + 2.4% checkbox (config proxy)", "total": 11691, "implemented": false}, {"label": "Elim + 30% CB + Score 2+ threshold", "total": 5208, "implemented": false}, {"label": "Elim + 30% CB + Score 3+ threshold", "total": 1263, "implemented": false}];
+const scenarioData = [{"label": "Current baseline (form submit)", "total": 18593, "implemented": false}, {"label": "Form elimination only", "total": 17891, "implemented": true}, {"label": "Score-change notifications (all, 0\u21921)", "total": 17254, "implemented": false}, {"label": "Elim + 50% checkbox opt-in", "total": 14715, "implemented": false}, {"label": "Elim + 30% checkbox opt-in", "total": 13444, "implemented": false}, {"label": "Elim + 2.4% checkbox (config proxy)", "total": 11691, "implemented": false}, {"label": "Elim + 30% CB + Score 2+ threshold", "total": 5208, "implemented": false}, {"label": "Elim + 30% CB + Score 3+ threshold", "total": 1263, "implemented": false}];
 const scenLabels = scenarioData.map(s => s.label);
 const scenVals   = scenarioData.map(s => s.total);
 const scenColors = scenarioData.map(s => s.implemented ? NAVY : '#CBD5E0');
@@ -620,7 +620,7 @@ new Chart(document.getElementById('scenarioChart'), {
       tooltip: {
         callbacks: {
           label: function(ctx) {
-            const pct = ((ctx.raw - 19200) / 19200 * 100).toFixed(1);
+            const pct = ((ctx.raw - 18593) / 18593 * 100).toFixed(1);
             const sign = pct > 0 ? '+' : '';
             return ` ${ctx.raw.toLocaleString()}/mo  (${sign}${pct}% vs baseline)`;
           }
@@ -641,7 +641,7 @@ new Chart(document.getElementById('scenarioChart'), {
     afterDraw: function(chart) {
       const ctx2 = chart.ctx;
       const xAxis = chart.scales.x;
-      const baselineX = xAxis.getPixelForValue(19200);
+      const baselineX = xAxis.getPixelForValue(18593);
       ctx2.save();
       ctx2.beginPath();
       ctx2.moveTo(baselineX, chart.chartArea.top);
@@ -652,7 +652,7 @@ new Chart(document.getElementById('scenarioChart'), {
       ctx2.stroke();
       ctx2.fillStyle = ACCENT;
       ctx2.font = 'bold 10px sans-serif';
-      ctx2.fillText('Baseline (19,200)', baselineX + 4, chart.chartArea.top + 12);
+      ctx2.fillText('Baseline (18,593)', baselineX + 4, chart.chartArea.top + 12);
       ctx2.restore();
     }
   }]
