@@ -460,7 +460,7 @@ html = f"""<!DOCTYPE html>
 <section class="section">
   <div class="section-label">Section 1</div>
   <div class="section-title">Baseline: The Pipeline Before Launch</div>
-  <div class="section-sub">April 2025 – April 2026 &nbsp;·&nbsp; 83 dealers &nbsp;·&nbsp; Align program excluded</div>
+  <div class="section-sub">April 2025 – April 2026 &nbsp;·&nbsp; 83 dealers &nbsp;·&nbsp; Align program excluded &nbsp;·&nbsp; Source: AIMBase</div>
 
   <div class="kpi-grid">
     <div class="kpi-card">
